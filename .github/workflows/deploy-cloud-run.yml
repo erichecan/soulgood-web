@@ -45,6 +45,7 @@ jobs:
             --region ${{ env.REGION }} \
             --project ${{ env.PROJECT_ID }} \
             --allow-unauthenticated \
+            --service-account=github-actions-deploy@soulgood-506103.iam.gserviceaccount.com \
             --add-cloudsql-instances=${{ env.CLOUDSQL_CONNECTION }} \
             --min-instances=0 --max-instances=3 \
             --memory=512Mi --cpu=1 \
