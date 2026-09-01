@@ -33,16 +33,18 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
 
   return (
     <main className="flex flex-1 flex-col">
-      <section className="relative flex min-h-[420px] items-center border-b">
-        <Image
-          src="/migrated/about/hero-section.webp"
-          alt=""
-          fill
-          priority
-          className="object-cover"
-        />
-        <div className="relative z-10 mx-auto flex w-full max-w-6xl justify-end px-4">
-          <div className="max-w-sm rounded-lg bg-background/95 p-8 shadow-lg">
+      <section className="mx-auto w-full max-w-6xl px-4 py-12">
+        <div className="flex flex-col items-stretch gap-6 md:flex-row md:items-center">
+          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg md:w-3/5">
+            <Image
+              src="/migrated/about/hero-section.webp"
+              alt=""
+              fill
+              priority
+              className="object-cover"
+            />
+          </div>
+          <div className="rounded-lg bg-background p-8 shadow-lg md:-ml-8 md:w-96 md:shrink-0">
             <h1 className="text-[28px] font-semibold leading-[1.2] tracking-tight lg:text-[40px]">
               {t("heroTitle")}
             </h1>
@@ -68,10 +70,10 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
           )}
         </p>
         <Image
-          src="/migrated/about/happy-work-healthy-life.png"
+          src="/migrated/about/happy-work-healthy-life.jpg"
           alt=""
-          width={740}
-          height={495}
+          width={2048}
+          height={1536}
           className="mx-auto mt-8 w-full max-w-2xl rounded-lg"
         />
       </section>

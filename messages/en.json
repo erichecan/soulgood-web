@@ -88,9 +88,12 @@
   },
   "Partners": {
     "title": "Our Partners",
-    "contactTitle": "Learn More and Contact Us on WeChat & Rednote",
-    "connectRednote": "Connect Rednote",
-    "connectWechat": "Connect Wechat"
+    "contactTitle": "Learn More and Connect With Us",
+    "connectRednote": "Rednote",
+    "connectWechat": "WeChat",
+    "connectFacebook": "Facebook",
+    "connectInstagram": "Instagram",
+    "connectTiktok": "TikTok"
   },
   "Auth": {
     "loginTitle": "Login",

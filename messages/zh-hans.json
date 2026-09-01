@@ -88,9 +88,12 @@
   },
   "Partners": {
     "title": "合作伙伴",
-    "contactTitle": "通过微信和小红书 了解更多并联系我们",
+    "contactTitle": "了解更多并联系我们",
     "connectRednote": "小红书",
-    "connectWechat": "微信"
+    "connectWechat": "微信",
+    "connectFacebook": "Facebook",
+    "connectInstagram": "Instagram",
+    "connectTiktok": "TikTok"
   },
   "Auth": {
     "loginTitle": "登录",

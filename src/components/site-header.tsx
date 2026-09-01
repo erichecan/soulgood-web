@@ -12,6 +12,7 @@ export function SiteHeader({ locale }: { locale: Locale }) {
 
   const links = [
     { href: "/", label: t("home") },
+    { href: "/about-us", label: t("aboutUs") },
     { href: "/courses", label: t("courses") },
     { href: "/blogs", label: t("blogs") },
     { href: "/membership-pricing", label: t("membership") },

@@ -38,43 +38,68 @@ export function PartnersGrid() {
   );
 }
 
+const contactChannels = [
+  {
+    key: "rednote",
+    labelKey: "connectRednote",
+    qrSrc: "/migrated/partners/rednote-qr.png",
+    href: "https://www.xiaohongshu.com/user/profile/61df1c740000000010005686",
+  },
+  {
+    key: "wechat",
+    labelKey: "connectWechat",
+    qrSrc: "/migrated/partners/wechat-qr.png",
+    href: "https://weixin.qq.com/r/QRG_ptbE6YuWrZLF90RT",
+  },
+  {
+    key: "facebook",
+    labelKey: "connectFacebook",
+    qrSrc: "/migrated/partners/facebook-qr.png",
+    href: undefined,
+  },
+  {
+    key: "instagram",
+    labelKey: "connectInstagram",
+    qrSrc: "/migrated/partners/instagram-qr.png",
+    href: undefined,
+  },
+  {
+    key: "tiktok",
+    labelKey: "connectTiktok",
+    qrSrc: "/migrated/partners/tiktok-qr.png",
+    href: undefined,
+  },
+] as const;
+
 export function PartnersContact() {
   const t = useTranslations("Partners");
 
   return (
     <div className="mt-10 rounded-xl bg-sky-500 px-6 py-10 text-center text-white">
       <h3 className="text-xl font-semibold lg:text-3xl">{t("contactTitle")}</h3>
-      <div className="mt-6 flex flex-col items-center justify-center gap-6 sm:flex-row">
-        <a
-          href="https://www.xiaohongshu.com/user/profile/61df1c740000000010005686"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-3 rounded-full bg-white/15 px-5 py-2 text-sm font-medium transition-colors hover:bg-white/25"
-        >
-          <Image
-            src="/migrated/partners/rednote-qr.png"
-            alt="Rednote QR code"
-            width={40}
-            height={40}
-            className="rounded"
-          />
-          {t("connectRednote")}
-        </a>
-        <a
-          href="https://weixin.qq.com/r/QRG_ptbE6YuWrZLF90RT"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-3 rounded-full bg-white/15 px-5 py-2 text-sm font-medium transition-colors hover:bg-white/25"
-        >
-          <Image
-            src="/migrated/partners/wechat-qr.png"
-            alt="WeChat QR code"
-            width={40}
-            height={40}
-            className="rounded"
-          />
-          {t("connectWechat")}
-        </a>
+      <div className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
+        {contactChannels.map((channel) => {
+          const content = (
+            <div className="flex flex-col items-center gap-3 rounded-lg bg-white/15 px-4 py-5 transition-colors hover:bg-white/25">
+              <Image
+                src={channel.qrSrc}
+                alt={`${t(channel.labelKey)} QR code`}
+                width={96}
+                height={96}
+                className="h-24 w-24 rounded bg-white p-1"
+              />
+              <span className="text-sm font-medium">{t(channel.labelKey)}</span>
+            </div>
+          );
+
+          return channel.href ? (
+            <a key={channel.key} href={channel.href} target="_blank" rel="noopener noreferrer">
+              {content}
+            </a>
+          ) : (
+            <div key={channel.key}>{content}</div>
+          );
+        })}
       </div>
     </div>
   );
