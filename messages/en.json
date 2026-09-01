@@ -1,6 +1,89 @@
 {
+  "Nav": {
+    "home": "Home",
+    "aboutUs": "About Us",
+    "courses": "Programs",
+    "blogs": "Blogs",
+    "membership": "Membership",
+    "ourPartners": "Our Partners",
+    "login": "Login",
+    "register": "Register",
+    "switchLanguage": "中文"
+  },
+  "Footer": {
+    "addressLabel": "Address",
+    "address": "Unit 400, 250 Consumers Rd, Toronto",
+    "phoneLabel": "Phone",
+    "phone": "647 892 8890",
+    "quickLinksTitle": "Quick Links",
+    "rights": "All rights reserved."
+  },
   "Home": {
-    "title": "Home (stub)",
-    "description": "English homepage placeholder — replaced in U4."
+    "heroEyebrow": "Soul Good Wellness Club",
+    "heroTitle": "Find balance for body, mind, and community",
+    "heroSubtitle": "Meditation, wellness workshops, and a membership community built to help you live a happier, healthier life.",
+    "heroCta": "Explore Programs",
+    "heroSecondaryCta": "View Membership",
+    "blogsSectionTitle": "Blogs",
+    "blogsSectionSubtitle": "Stories and guidance from our community",
+    "blogsSectionCta": "See all blogs",
+    "coursesSectionTitle": "Featured Programs",
+    "coursesSectionCta": "See all programs",
+    "partnersSectionTitle": "Our Partners"
+  },
+  "About": {
+    "title": "About Us",
+    "intro": "Soul Good Wellness Club is a community dedicated to helping members build healthier, more balanced lives through meditation, wellness education, and mutual support.",
+    "missionTitle": "Mission",
+    "missionBody": "To make wellness practices such as meditation and mindful living accessible to everyone, so that our members can navigate everyday stress with clarity and calm.",
+    "visionTitle": "Vision",
+    "visionBody": "A community where every member feels supported in pursuing a healthier body, a calmer mind, and stronger relationships with the people around them.",
+    "objectiveTitle": "Objective",
+    "objectiveBody": "We deliver ongoing programs, workshops, and a membership community that gives members practical tools and consistent support on their wellness journey."
+  },
+  "Courses": {
+    "title": "Programs",
+    "subtitle": "Meditation and wellness programs to support your journey",
+    "priceLabel": "Price",
+    "levelLabel": "Level",
+    "enrollCta": "Enroll",
+    "paymentComingSoon": "Online payment is not yet available — please contact us to enroll.",
+    "backToCourses": "Back to all programs",
+    "notFound": "This program could not be found."
+  },
+  "Blogs": {
+    "title": "Blogs",
+    "subtitle": "Stories, tips, and guidance from our community",
+    "readMore": "Read more",
+    "backToBlogs": "Back to all blogs",
+    "byLabel": "By",
+    "notFound": "This article could not be found."
+  },
+  "Membership": {
+    "title": "Membership",
+    "subtitle": "Join Soul Good Wellness Club and become part of a supportive community",
+    "normalName": "Normal Member",
+    "normalPrice": "$20",
+    "normalPeriod": "/ month",
+    "normalFeatures": [
+      "Access to member-only community events",
+      "Discounted rates on select programs",
+      "Monthly wellness newsletter"
+    ],
+    "vipName": "VIP Member",
+    "vipPrice": "$999",
+    "vipPeriod": "/ year",
+    "vipFeatures": [
+      "Everything in Normal Membership",
+      "Priority enrollment in all programs",
+      "Complimentary access to select workshops",
+      "One-on-one wellness check-in each quarter"
+    ],
+    "getCta": "Get Started",
+    "paymentComingSoon": "Online payment is not yet available — please contact us to join."
+  },
+  "Partners": {
+    "title": "Our Partners",
+    "subtitle": "Organizations that support and collaborate with Soul Good Wellness Club"
   }
 }
