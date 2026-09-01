@@ -6,6 +6,8 @@ import { getBlogPostBySlug } from "@/lib/db/blogs";
 import { localizeBlogPost } from "@/lib/localize-content";
 import type { Locale } from "@/i18n/routing";
 
+export const dynamic = "force-dynamic";
+
 export default async function BlogDetailPage({
   params,
 }: PageProps<"/[locale]/blogs/[slug]">) {

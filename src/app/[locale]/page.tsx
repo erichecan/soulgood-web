@@ -9,6 +9,8 @@ import { localizeCourse, localizeBlogPost } from "@/lib/localize-content";
 import { PartnersGrid, PartnersContact } from "@/components/partners-grid";
 import type { Locale } from "@/i18n/routing";
 
+export const dynamic = "force-dynamic";
+
 export default async function HomePage({ params }: PageProps<"/[locale]">) {
   const { locale } = await params;
   const [t, aboutT, blogsT, courses, blogPosts] = await Promise.all([

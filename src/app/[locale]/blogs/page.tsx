@@ -6,6 +6,8 @@ import { listPublishedBlogPosts } from "@/lib/db/blogs";
 import { localizeBlogPost } from "@/lib/localize-content";
 import type { Locale } from "@/i18n/routing";
 
+export const dynamic = "force-dynamic";
+
 export default async function BlogsPage({ params }: PageProps<"/[locale]/blogs">) {
   const { locale } = await params;
   const t = await getTranslations("Blogs");

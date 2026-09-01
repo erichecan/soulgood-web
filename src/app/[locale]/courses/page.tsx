@@ -7,6 +7,8 @@ import { listPublishedCourses } from "@/lib/db/courses";
 import { localizeCourse } from "@/lib/localize-content";
 import type { Locale } from "@/i18n/routing";
 
+export const dynamic = "force-dynamic";
+
 export default async function CoursesPage({ params }: PageProps<"/[locale]/courses">) {
   const { locale } = await params;
   const t = await getTranslations("Courses");
