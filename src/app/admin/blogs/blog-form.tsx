@@ -24,7 +24,7 @@ export function BlogForm({
         </div>
         <div className="space-y-1.5">
           <Label htmlFor="titleEn">Title (EN)</Label>
-          <Input id="titleEn" name="titleEn" required defaultValue={defaultValues?.titleEn} />
+          <Input id="titleEn" name="titleEn" defaultValue={defaultValues?.titleEn ?? ""} />
         </div>
         <div className="space-y-1.5">
           <Label htmlFor="titleZh">Title (ZH)</Label>
@@ -33,7 +33,7 @@ export function BlogForm({
       </div>
       <div className="space-y-1.5">
         <Label htmlFor="contentEn">Content (EN)</Label>
-        <Textarea id="contentEn" name="contentEn" required rows={6} defaultValue={defaultValues?.contentEn} />
+        <Textarea id="contentEn" name="contentEn" rows={6} defaultValue={defaultValues?.contentEn ?? ""} />
       </div>
       <div className="space-y-1.5">
         <Label htmlFor="contentZh">Content (ZH)</Label>

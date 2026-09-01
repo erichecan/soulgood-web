@@ -7,6 +7,15 @@ const nextConfig: NextConfig = {
   experimental: {
     authInterrupts: true,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "soulgoodwclub.org",
+        pathname: "/wp-content/uploads/**",
+      },
+    ],
+  },
 };
 
 export default withNextIntl(nextConfig);

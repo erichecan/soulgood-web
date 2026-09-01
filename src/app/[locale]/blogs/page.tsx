@@ -1,13 +1,16 @@
 import Image from "next/image";
-import { useLocale, useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { blogPosts, localizedBlogPost, type Locale } from "@/lib/mock-data";
+import { listPublishedBlogPosts } from "@/lib/db/blogs";
+import { localizeBlogPost } from "@/lib/localize-content";
+import type { Locale } from "@/i18n/routing";
 
-export default function BlogsPage() {
-  const locale = useLocale() as Locale;
-  const t = useTranslations("Blogs");
-  const list = blogPosts.map((p) => localizedBlogPost(p, locale)).filter((p) => p !== null);
+export default async function BlogsPage({ params }: PageProps<"/[locale]/blogs">) {
+  const { locale } = await params;
+  const t = await getTranslations("Blogs");
+  const posts = await listPublishedBlogPosts();
+  const list = posts.map((p) => localizeBlogPost(p, locale as Locale)).filter((p) => p !== null);
 
   return (
     <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-16">

@@ -27,7 +27,7 @@ export default async function AdminBlogsPage() {
         <TableBody>
           {posts.map((post) => (
             <TableRow key={post.id}>
-              <TableCell>{post.titleEn}</TableCell>
+              <TableCell>{post.titleEn ?? post.titleZh}</TableCell>
               <TableCell className="text-muted-foreground">{post.slug}</TableCell>
               <TableCell>{post.publishedAt ? post.publishedAt.toLocaleDateString() : "Draft"}</TableCell>
               <TableCell>

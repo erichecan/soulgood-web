@@ -1,20 +1,29 @@
 import Image from "next/image";
-import { useLocale, useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { courses, blogPosts, localizedCourse, localizedBlogPost, type Locale } from "@/lib/mock-data";
+import { listPublishedCourses } from "@/lib/db/courses";
+import { listPublishedBlogPosts } from "@/lib/db/blogs";
+import { localizeCourse, localizeBlogPost } from "@/lib/localize-content";
 import { PartnersGrid, PartnersContact } from "@/components/partners-grid";
+import type { Locale } from "@/i18n/routing";
 
-export default function HomePage() {
-  const locale = useLocale() as Locale;
-  const t = useTranslations("Home");
-  const aboutT = useTranslations("About");
-  const coursesT = useTranslations("Courses");
-  const blogsT = useTranslations("Blogs");
-
-  const localizedCourses = courses.map((c) => localizedCourse(c, locale)).filter((c) => c !== null);
-  const localizedPosts = blogPosts.map((p) => localizedBlogPost(p, locale)).filter((p) => p !== null);
+export default async function HomePage({ params }: PageProps<"/[locale]">) {
+  const { locale } = await params;
+  const [t, aboutT, blogsT, courses, blogPosts] = await Promise.all([
+    getTranslations("Home"),
+    getTranslations("About"),
+    getTranslations("Blogs"),
+    listPublishedCourses(),
+    listPublishedBlogPosts(),
+  ]);
+  const localizedCourses = courses
+    .map((c) => localizeCourse(c, locale as Locale))
+    .filter((c) => c !== null);
+  const localizedPosts = blogPosts
+    .map((p) => localizeBlogPost(p, locale as Locale))
+    .filter((p) => p !== null);
 
   const missionCards = [
     { image: "/migrated/about/our-mission.webp", title: aboutT("missionTitle"), body: aboutT("missionBody") },

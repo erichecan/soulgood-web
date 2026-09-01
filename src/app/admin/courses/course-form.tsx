@@ -24,7 +24,7 @@ export function CourseForm({
         </div>
         <div className="space-y-1.5">
           <Label htmlFor="titleEn">Title (EN)</Label>
-          <Input id="titleEn" name="titleEn" required defaultValue={defaultValues?.titleEn} />
+          <Input id="titleEn" name="titleEn" defaultValue={defaultValues?.titleEn ?? ""} />
         </div>
         <div className="space-y-1.5">
           <Label htmlFor="titleZh">Title (ZH)</Label>
@@ -39,7 +39,25 @@ export function CourseForm({
         <Label htmlFor="descriptionZh">Description (ZH)</Label>
         <Textarea id="descriptionZh" name="descriptionZh" rows={4} defaultValue={defaultValues?.descriptionZh ?? ""} />
       </div>
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="space-y-1.5">
+        <Label htmlFor="whatYoullLearnEn">What You&apos;ll Learn (EN)</Label>
+        <Textarea
+          id="whatYoullLearnEn"
+          name="whatYoullLearnEn"
+          rows={2}
+          defaultValue={defaultValues?.whatYoullLearnEn ?? ""}
+        />
+      </div>
+      <div className="space-y-1.5">
+        <Label htmlFor="whatYoullLearnZh">What You&apos;ll Learn (ZH)</Label>
+        <Textarea
+          id="whatYoullLearnZh"
+          name="whatYoullLearnZh"
+          rows={2}
+          defaultValue={defaultValues?.whatYoullLearnZh ?? ""}
+        />
+      </div>
+      <div className="grid gap-4 sm:grid-cols-3">
         <div className="space-y-1.5">
           <Label htmlFor="price">Price</Label>
           <Input
@@ -49,6 +67,16 @@ export function CourseForm({
             step="0.01"
             required
             defaultValue={defaultValues ? String(defaultValues.price) : undefined}
+          />
+        </div>
+        <div className="space-y-1.5">
+          <Label htmlFor="compareAtPrice">Compare-at Price</Label>
+          <Input
+            id="compareAtPrice"
+            name="compareAtPrice"
+            type="number"
+            step="0.01"
+            defaultValue={defaultValues?.compareAtPrice ? String(defaultValues.compareAtPrice) : ""}
           />
         </div>
         <div className="space-y-1.5">

@@ -41,3 +41,6 @@ yarn-error.log*
 next-env.d.ts
 
 /src/generated/prisma
+
+# WP migration exports (contain real content/password hashes, regenerate via export-wp.sh)
+/scripts/migrate-wp/data/

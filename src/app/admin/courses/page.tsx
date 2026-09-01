@@ -27,7 +27,7 @@ export default async function AdminCoursesPage() {
         <TableBody>
           {courses.map((course) => (
             <TableRow key={course.id}>
-              <TableCell>{course.titleEn}</TableCell>
+              <TableCell>{course.titleEn ?? course.titleZh}</TableCell>
               <TableCell className="text-muted-foreground">{course.slug}</TableCell>
               <TableCell>${String(course.price)}</TableCell>
               <TableCell>

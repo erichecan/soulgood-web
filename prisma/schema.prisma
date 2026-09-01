@@ -50,18 +50,21 @@ model MembershipSubscription {
 }
 
 model Course {
-  id            String    @id @default(cuid())
-  slug          String    @unique
-  titleEn       String
-  titleZh       String?
-  descriptionEn String?
-  descriptionZh String?
-  price         Decimal
-  level         String?
-  thumbnailUrl  String?
-  publishedAt   DateTime?
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
+  id                String    @id @default(cuid())
+  slug              String    @unique
+  titleEn           String?
+  titleZh           String?
+  descriptionEn     String?
+  descriptionZh     String?
+  whatYoullLearnEn  String?
+  whatYoullLearnZh  String?
+  price             Decimal
+  compareAtPrice    Decimal?
+  level             String?
+  thumbnailUrl      String?
+  publishedAt       DateTime?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
 
   enrollments   Enrollment[]
   certificates  Certificate[]
@@ -83,9 +86,9 @@ model Enrollment {
 model BlogPost {
   id            String    @id @default(cuid())
   slug          String    @unique
-  titleEn       String
+  titleEn       String?
   titleZh       String?
-  contentEn     String
+  contentEn     String?
   contentZh     String?
   coverImageUrl String?
   author        String?

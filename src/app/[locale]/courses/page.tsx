@@ -1,14 +1,17 @@
 import Image from "next/image";
-import { useLocale, useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { courses, localizedCourse, type Locale } from "@/lib/mock-data";
+import { listPublishedCourses } from "@/lib/db/courses";
+import { localizeCourse } from "@/lib/localize-content";
+import type { Locale } from "@/i18n/routing";
 
-export default function CoursesPage() {
-  const locale = useLocale() as Locale;
-  const t = useTranslations("Courses");
-  const list = courses.map((c) => localizedCourse(c, locale)).filter((c) => c !== null);
+export default async function CoursesPage({ params }: PageProps<"/[locale]/courses">) {
+  const { locale } = await params;
+  const t = await getTranslations("Courses");
+  const courses = await listPublishedCourses();
+  const list = courses.map((c) => localizeCourse(c, locale as Locale)).filter((c) => c !== null);
 
   return (
     <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-16">
@@ -17,11 +20,13 @@ export default function CoursesPage() {
         {list.map((course) => (
           <Link key={course.slug} href={`/courses/${encodeURIComponent(course.slug)}`}>
             <Card className="h-full overflow-hidden transition-shadow hover:shadow-md">
-              <Image src={course.image} alt="" width={400} height={260} className="h-40 w-full object-cover" />
+              {course.image && (
+                <Image src={course.image} alt="" width={400} height={260} className="h-40 w-full object-cover" />
+              )}
               <CardHeader>
                 <div className="flex items-center justify-between gap-2">
                   <CardTitle className="text-base">{course.title}</CardTitle>
-                  <Badge variant="secondary">{course.level}</Badge>
+                  {course.level && <Badge variant="secondary">{course.level}</Badge>}
                 </div>
               </CardHeader>
               <CardContent>

@@ -4,25 +4,23 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { courses, localizedCourse, type Locale } from "@/lib/mock-data";
-
-export function generateStaticParams() {
-  return courses.map((course) => ({ slug: course.slug }));
-}
+import { getCourseBySlug } from "@/lib/db/courses";
+import { localizeCourse } from "@/lib/localize-content";
+import type { Locale } from "@/i18n/routing";
 
 export default async function CourseDetailPage({
   params,
 }: PageProps<"/[locale]/courses/[slug]">) {
   const { locale, slug } = await params;
   const decodedSlug = decodeURIComponent(slug);
-  const course = courses.find((c) => c.slug === decodedSlug);
+  const course = await getCourseBySlug(decodedSlug);
   const t = await getTranslations("Courses");
 
   if (!course) {
     notFound();
   }
 
-  const localized = localizedCourse(course, locale as Locale);
+  const localized = localizeCourse(course, locale as Locale);
 
   if (!localized) {
     return (
@@ -40,18 +38,20 @@ export default async function CourseDetailPage({
       <Link href="/courses" className="text-sm font-medium text-primary hover:underline">
         &larr; {t("backToCourses")}
       </Link>
-      <Image
-        src={localized.image}
-        alt=""
-        width={800}
-        height={450}
-        className="mt-6 w-full rounded-lg object-cover"
-      />
+      {localized.image && (
+        <Image
+          src={localized.image}
+          alt=""
+          width={800}
+          height={450}
+          className="mt-6 w-full rounded-lg object-cover"
+        />
+      )}
       <div className="mt-6 flex items-center gap-3">
         <h1 className="text-3xl font-semibold tracking-tight">{localized.title}</h1>
-        <Badge variant="secondary">{localized.level}</Badge>
+        {localized.level && <Badge variant="secondary">{localized.level}</Badge>}
       </div>
-      <p className="mt-4 text-lg text-muted-foreground">{localized.overview}</p>
+      {localized.description && <p className="mt-4 text-lg text-muted-foreground">{localized.description}</p>}
       {localized.whatYoullLearn && (
         <div className="mt-8">
           <h2 className="text-xl font-semibold tracking-tight">{t("whatYoullLearn")}</h2>

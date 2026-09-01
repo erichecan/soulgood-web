@@ -7,30 +7,44 @@ import { createCourse, deleteCourse, updateCourse, type CourseInput } from "@/li
 
 function parseCourseInput(formData: FormData): CourseInput {
   const publishedAt = String(formData.get("publishedAt") ?? "").trim();
+  const compareAtPrice = String(formData.get("compareAtPrice") ?? "").trim();
   return {
     slug: String(formData.get("slug") ?? "").trim(),
-    titleEn: String(formData.get("titleEn") ?? "").trim(),
+    titleEn: String(formData.get("titleEn") ?? "").trim() || null,
     titleZh: String(formData.get("titleZh") ?? "").trim() || null,
     descriptionEn: String(formData.get("descriptionEn") ?? "").trim() || null,
     descriptionZh: String(formData.get("descriptionZh") ?? "").trim() || null,
+    whatYoullLearnEn: String(formData.get("whatYoullLearnEn") ?? "").trim() || null,
+    whatYoullLearnZh: String(formData.get("whatYoullLearnZh") ?? "").trim() || null,
     price: Number(formData.get("price") ?? 0),
+    compareAtPrice: compareAtPrice ? Number(compareAtPrice) : null,
     level: String(formData.get("level") ?? "").trim() || null,
     thumbnailUrl: String(formData.get("thumbnailUrl") ?? "").trim() || null,
     publishedAt: publishedAt ? new Date(publishedAt) : null,
   };
 }
 
+function revalidatePublicPages(slug: string) {
+  revalidatePath("/[locale]", "page");
+  revalidatePath("/[locale]/courses", "page");
+  revalidatePath(`/[locale]/courses/${slug}`, "page");
+}
+
 export async function createCourseAction(formData: FormData) {
   await requireAdmin();
-  await createCourse(parseCourseInput(formData));
+  const input = parseCourseInput(formData);
+  await createCourse(input);
   revalidatePath("/admin/courses");
+  revalidatePublicPages(input.slug);
   redirect("/admin/courses");
 }
 
 export async function updateCourseAction(id: string, formData: FormData) {
   await requireAdmin();
-  await updateCourse(id, parseCourseInput(formData));
+  const input = parseCourseInput(formData);
+  await updateCourse(id, input);
   revalidatePath("/admin/courses");
+  revalidatePublicPages(input.slug);
   redirect("/admin/courses");
 }
 
@@ -38,4 +52,5 @@ export async function deleteCourseAction(id: string) {
   await requireAdmin();
   await deleteCourse(id);
   revalidatePath("/admin/courses");
+  revalidatePath("/[locale]/courses", "page");
 }

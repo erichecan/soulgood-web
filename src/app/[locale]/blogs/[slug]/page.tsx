@@ -2,25 +2,23 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { blogPosts, localizedBlogPost, type Locale } from "@/lib/mock-data";
-
-export function generateStaticParams() {
-  return blogPosts.map((post) => ({ slug: post.slug }));
-}
+import { getBlogPostBySlug } from "@/lib/db/blogs";
+import { localizeBlogPost } from "@/lib/localize-content";
+import type { Locale } from "@/i18n/routing";
 
 export default async function BlogDetailPage({
   params,
 }: PageProps<"/[locale]/blogs/[slug]">) {
   const { locale, slug } = await params;
   const decodedSlug = decodeURIComponent(slug);
-  const post = blogPosts.find((p) => p.slug === decodedSlug);
+  const post = await getBlogPostBySlug(decodedSlug);
   const t = await getTranslations("Blogs");
 
   if (!post) {
     notFound();
   }
 
-  const localized = localizedBlogPost(post, locale as Locale);
+  const localized = localizeBlogPost(post, locale as Locale);
 
   if (!localized) {
     return (
