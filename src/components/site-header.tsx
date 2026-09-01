@@ -1,10 +1,13 @@
+import { Suspense } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import { LocaleSwitcher } from "@/components/locale-switcher";
+import { AuthButtons, AuthButtonsSkeleton } from "@/components/auth-buttons";
+import type { Locale } from "@/i18n/routing";
 
-export function SiteHeader() {
+export function SiteHeader({ locale }: { locale: Locale }) {
   const t = useTranslations("Nav");
 
   const links = [
@@ -40,9 +43,9 @@ export function SiteHeader() {
         </nav>
         <div className="flex items-center gap-2">
           <LocaleSwitcher />
-          <Button asChild variant="ghost" size="sm" className="hidden sm:inline-flex">
-            <Link href="/login">{t("login")}</Link>
-          </Button>
+          <Suspense fallback={<AuthButtonsSkeleton />}>
+            <AuthButtons locale={locale} />
+          </Suspense>
           <Button asChild size="sm">
             <Link href="/membership-pricing">{t("pricing")}</Link>
           </Button>

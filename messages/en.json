@@ -91,5 +91,35 @@
     "contactTitle": "Learn More and Contact Us on WeChat & Rednote",
     "connectRednote": "Connect Rednote",
     "connectWechat": "Connect Wechat"
+  },
+  "Auth": {
+    "loginTitle": "Login",
+    "loginSubtitle": "Welcome back to Soul Good Happy Women's Club",
+    "registerTitle": "Register",
+    "registerSubtitle": "Create an account to join Soul Good Happy Women's Club",
+    "nameLabel": "Name",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "loginCta": "Login",
+    "registerCta": "Register",
+    "googleCta": "Continue with Google",
+    "orDivider": "or",
+    "noAccountYet": "Don't have an account?",
+    "registerLink": "Register",
+    "alreadyHaveAccount": "Already have an account?",
+    "loginLink": "Login",
+    "errorInvalidCredentials": "Incorrect email or password.",
+    "errorDuplicateEmail": "This email is already registered.",
+    "errorPasswordTooShort": "Password must be at least 8 characters.",
+    "errorGeneric": "Something went wrong. Please try again."
+  },
+  "Dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome back, {name}",
+    "logoutCta": "Log out",
+    "membershipSectionTitle": "Membership",
+    "noMembership": "You don't have an active membership yet.",
+    "enrollmentsSectionTitle": "My Programs",
+    "noEnrollments": "You haven't enrolled in any programs yet."
   }
 }

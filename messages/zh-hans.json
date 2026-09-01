@@ -91,5 +91,35 @@
     "contactTitle": "通过微信和小红书 了解更多并联系我们",
     "connectRednote": "小红书",
     "connectWechat": "微信"
+  },
+  "Auth": {
+    "loginTitle": "登录",
+    "loginSubtitle": "欢迎回到 Soul Good 慧之灵女性成长俱乐部",
+    "registerTitle": "注册",
+    "registerSubtitle": "创建账号，加入 Soul Good 慧之灵女性成长俱乐部",
+    "nameLabel": "姓名",
+    "emailLabel": "邮箱",
+    "passwordLabel": "密码",
+    "loginCta": "登录",
+    "registerCta": "注册",
+    "googleCta": "使用 Google 继续",
+    "orDivider": "或",
+    "noAccountYet": "还没有账号？",
+    "registerLink": "去注册",
+    "alreadyHaveAccount": "已经有账号？",
+    "loginLink": "去登录",
+    "errorInvalidCredentials": "邮箱或密码不正确。",
+    "errorDuplicateEmail": "该邮箱已被注册。",
+    "errorPasswordTooShort": "密码至少需要 8 位。",
+    "errorGeneric": "出了点问题，请重试。"
+  },
+  "Dashboard": {
+    "title": "会员中心",
+    "welcome": "欢迎回来，{name}",
+    "logoutCta": "退出登录",
+    "membershipSectionTitle": "会员方案",
+    "noMembership": "你还没有开通会员。",
+    "enrollmentsSectionTitle": "我的课程项目",
+    "noEnrollments": "你还没有报名任何课程项目。"
   }
 }
