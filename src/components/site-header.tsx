@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
@@ -8,18 +9,23 @@ export function SiteHeader() {
 
   const links = [
     { href: "/", label: t("home") },
-    { href: "/about-us", label: t("aboutUs") },
     { href: "/courses", label: t("courses") },
     { href: "/blogs", label: t("blogs") },
     { href: "/membership-pricing", label: t("membership") },
-    { href: "/our-partners", label: t("ourPartners") },
   ] as const;
 
   return (
     <header className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4">
-        <Link href="/" className="text-lg font-semibold tracking-tight">
-          Soul Good
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/migrated/brand/header-logo.svg"
+            alt="Soul Good Happy Women's Club"
+            width={120}
+            height={79}
+            className="h-10 w-auto"
+            priority
+          />
         </Link>
         <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
           {links.map((link) => (
@@ -38,7 +44,7 @@ export function SiteHeader() {
             <Link href="/login">{t("login")}</Link>
           </Button>
           <Button asChild size="sm">
-            <Link href="/register">{t("register")}</Link>
+            <Link href="/membership-pricing">{t("pricing")}</Link>
           </Button>
         </div>
       </div>

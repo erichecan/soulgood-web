@@ -1,89 +1,95 @@
 {
   "Nav": {
     "home": "Home",
-    "aboutUs": "About Us",
-    "courses": "Programs",
+    "courses": "Courses",
     "blogs": "Blogs",
     "membership": "Membership",
+    "aboutUs": "About Us",
     "ourPartners": "Our Partners",
     "login": "Login",
-    "register": "Register",
-    "switchLanguage": "中文"
+    "pricing": "Pricing",
+    "switchLanguage": "中文",
+    "club": "Club"
   },
   "Footer": {
-    "addressLabel": "Address",
     "address": "Unit 400, 250 Consumers Rd, Toronto",
-    "phoneLabel": "Phone",
     "phone": "647 892 8890",
-    "quickLinksTitle": "Quick Links",
-    "rights": "All rights reserved."
+    "email": "info.soulgoodwomensclub@gmail.com",
+    "rights": "Soul Good. All Rights Reserved"
   },
   "Home": {
-    "heroEyebrow": "Soul Good Wellness Club",
-    "heroTitle": "Find balance for body, mind, and community",
-    "heroSubtitle": "Meditation, wellness workshops, and a membership community built to help you live a happier, healthier life.",
-    "heroCta": "Explore Programs",
-    "heroSecondaryCta": "View Membership",
+    "heroTitle": "Welcome to Soul Good Happy Women’s Club",
+    "heroCta": "Program",
+    "tagline": "HAPPY WORK HEALTHY LIFE",
+    "taglineSubtitleLine1": "Experience the magic and excitement",
+    "taglineSubtitleLine2": "tailored for women of all ages",
+    "missionSectionTitle": "Our Mission, Vision, and Objectives",
+    "introTitle": "Introduction",
+    "coursesSectionTitle": "Popular Courses",
+    "coursesSectionCta": "Browse All Courses",
     "blogsSectionTitle": "Blogs",
-    "blogsSectionSubtitle": "Stories and guidance from our community",
-    "blogsSectionCta": "See all blogs",
-    "coursesSectionTitle": "Featured Programs",
-    "coursesSectionCta": "See all programs",
+    "blogsSectionCta": "Browse All Articles",
     "partnersSectionTitle": "Our Partners"
   },
   "About": {
-    "title": "About Us",
-    "intro": "Soul Good Wellness Club is a community dedicated to helping members build healthier, more balanced lives through meditation, wellness education, and mutual support.",
-    "missionTitle": "Mission",
-    "missionBody": "To make wellness practices such as meditation and mindful living accessible to everyone, so that our members can navigate everyday stress with clarity and calm.",
-    "visionTitle": "Vision",
-    "visionBody": "A community where every member feels supported in pursuing a healthier body, a calmer mind, and stronger relationships with the people around them.",
-    "objectiveTitle": "Objective",
-    "objectiveBody": "We deliver ongoing programs, workshops, and a membership community that gives members practical tools and consistent support on their wellness journey."
+    "sectionTitle": "Our Mission, Vision, and Objectives",
+    "missionTitle": "Our Mission",
+    "missionBody": "Our mission is to help Canadians build their dream business or grow their small business. We assist with opportunities such as applying for government entrepreneurship funding and professional marketing promotion.",
+    "objectiveTitle": "Our Objective",
+    "objectiveBody": "We aim to improve the lives and happiness of Canadian women immigrants through helping their small business or studio growing up; rich their leisure life with life coach consulting and personal growth courses including yoga and art etc., We aim to reach 500 immigrants per year!",
+    "visionTitle": "Our Vision",
+    "visionBody": "Our vision is to enrich women's leisure life and encourage them to live a healthy and beautiful life. We assist professional women in creating their careers and we encourage them to build a more prosperous life and diversified career."
   },
   "Courses": {
-    "title": "Programs",
-    "subtitle": "Meditation and wellness programs to support your journey",
-    "priceLabel": "Price",
+    "title": "Courses",
+    "byLabel": "By",
     "levelLabel": "Level",
+    "priceLabel": "Price",
     "enrollCta": "Enroll",
     "paymentComingSoon": "Online payment is not yet available — please contact us to enroll.",
-    "backToCourses": "Back to all programs",
-    "notFound": "This program could not be found."
+    "backToCourses": "Back to all courses",
+    "whatYoullLearn": "What You’ll Learn?",
+    "notFound": "This course could not be found.",
+    "noEnglishNotice": "This course is currently only published in Chinese on the source site — switch to 中文 to view it."
   },
   "Blogs": {
-    "title": "Blogs",
-    "subtitle": "Stories, tips, and guidance from our community",
+    "title": "Latest News",
+    "subtitle": "Insights and Inspiration for Women",
     "readMore": "Read more",
-    "backToBlogs": "Back to all blogs",
+    "backToBlogs": "Back to all articles",
     "byLabel": "By",
     "notFound": "This article could not be found."
   },
   "Membership": {
-    "title": "Membership",
-    "subtitle": "Join Soul Good Wellness Club and become part of a supportive community",
-    "normalName": "Normal Member",
-    "normalPrice": "$20",
+    "title": "Pricing Plan",
+    "subtitle": "Experience the magic and excitement tailored for women of all ages.",
+    "intro": "Join the Soul Good Happy Women Club and gain unlimited access to our exclusive workshops, mentorship programs, and a supportive community. Whether you're advancing your career, launching a business, or seeking personal balance, your journey to empowerment never stops here.",
+    "normalName": "Normal Member 普通会员",
+    "normalPrice": "$20.00",
     "normalPeriod": "/ month",
     "normalFeatures": [
-      "Access to member-only community events",
-      "Discounted rates on select programs",
-      "Monthly wellness newsletter"
+      "Career Development Workshops 职业发展工作坊：职业规划、求职技巧、职场软技能等",
+      "Entrepreneurship Guidance and Training 创业指导与培训",
+      "Mind-Body and Holistic Wellness Program 身心和整体健康计划",
+      "Happy Families: Building Relationships 幸福家庭——发展关系"
     ],
-    "vipName": "VIP Member",
-    "vipPrice": "$999",
+    "vipName": "VIP Member VIP会员",
+    "vipDescription": "Receive exclusive program offers, opportunities for community engagement, and increased involvement in our leadership with our VIP Package. 订阅我们的VIP套餐，即可享受专属活动优惠、参与社区互动的机会，并进一步融入我们的领导层。",
+    "vipPrice": "$999.00",
     "vipPeriod": "/ year",
     "vipFeatures": [
-      "Everything in Normal Membership",
-      "Priority enrollment in all programs",
-      "Complimentary access to select workshops",
-      "One-on-one wellness check-in each quarter"
+      "All Normal Member features 所有普通会员功能",
+      "Enjoy exclusive program discounts 享受专属项目优惠",
+      "Opportunities to get involved in the community 更多社区参与机会",
+      "Participate in leadership roles 参与领导层工作"
     ],
-    "getCta": "Get Started",
+    "getCta": "Get",
     "paymentComingSoon": "Online payment is not yet available — please contact us to join."
   },
   "Partners": {
     "title": "Our Partners",
-    "subtitle": "Organizations that support and collaborate with Soul Good Wellness Club"
+    "contactTitle": "Learn More and Contact Us on WeChat & Rednote",
+    "connectRednote": "Connect Rednote",
+    "connectWechat": "Connect Wechat"
   }
 }

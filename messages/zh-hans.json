@@ -1,89 +1,95 @@
 {
   "Nav": {
-    "home": "首页",
-    "aboutUs": "关于我们",
-    "courses": "课程项目",
+    "home": "主页",
+    "courses": "课程",
     "blogs": "博客",
     "membership": "会员",
+    "aboutUs": "关于我们",
     "ourPartners": "合作伙伴",
-    "login": "登录",
-    "register": "注册",
-    "switchLanguage": "English"
+    "login": "登入",
+    "pricing": "会员定价",
+    "switchLanguage": "English",
+    "club": "Club"
   },
   "Footer": {
-    "addressLabel": "地址",
     "address": "250 Consumers Rd, Unit 400, Toronto",
-    "phoneLabel": "电话",
     "phone": "647 892 8890",
-    "quickLinksTitle": "快速链接",
-    "rights": "版权所有。"
+    "email": "info.soulgoodwomensclub@gmail.com",
+    "rights": "Soul Good. All Rights Reserved"
   },
   "Home": {
-    "heroEyebrow": "Soul Good 身心灵俱乐部",
-    "heroTitle": "为身体、心灵与社群找到平衡",
-    "heroSubtitle": "冥想课程、身心健康工作坊，以及一个会员社群，帮助你活出更快乐、更健康的生活。",
-    "heroCta": "探索课程项目",
-    "heroSecondaryCta": "查看会员方案",
-    "blogsSectionTitle": "博客",
-    "blogsSectionSubtitle": "来自我们社群的分享与指导",
-    "blogsSectionCta": "查看全部博客",
-    "coursesSectionTitle": "精选课程项目",
-    "coursesSectionCta": "查看全部课程项目",
+    "heroTitle": "欢迎来到 慧之灵女性成长俱乐部",
+    "heroCta": "浏览所有课程",
+    "tagline": "快乐工作 健康生活",
+    "taglineSubtitleLine1": "体验为各年龄段女性量身定制的神奇与激情",
+    "taglineSubtitleLine2": "",
+    "missionSectionTitle": "我们的使命、愿景与目标",
+    "introTitle": "简介",
+    "coursesSectionTitle": "热门课程",
+    "coursesSectionCta": "浏览所有课程",
+    "blogsSectionTitle": "最新动态",
+    "blogsSectionCta": "浏览所有文章",
     "partnersSectionTitle": "合作伙伴"
   },
   "About": {
-    "title": "关于我们",
-    "intro": "Soul Good 身心灵俱乐部是一个致力于帮助会员通过冥想、身心健康教育与彼此支持，建立更健康、更平衡生活方式的社群。",
-    "missionTitle": "使命",
-    "missionBody": "让冥想与正念生活等身心健康实践触手可及，帮助会员以清晰平和的心态面对日常压力。",
-    "visionTitle": "愿景",
-    "visionBody": "打造一个社群，让每一位会员在追求更健康的身体、更平静的内心，以及与身边人更良好的关系时，都能感受到支持。",
-    "objectiveTitle": "目标",
-    "objectiveBody": "我们持续提供课程项目、工作坊与会员社群，为会员的身心健康旅程提供实用工具与持续支持。"
+    "sectionTitle": "我们的使命、愿景与目标",
+    "missionTitle": "我们的使命",
+    "missionBody": "我们的使命是帮助加拿大人建立梦想事业或发展他们的小型企业。我们协助申请政府创业基金以及提供专业的市场推广服务。",
+    "objectiveTitle": "我们的目标",
+    "objectiveBody": "我们旨在通过帮助加拿大女性移民发展她们的小型企业或工作室来改善她们的生活和幸福感；并通过生活教练咨询以及包括瑜伽、美术等在内的个人成长课程丰富她们的休闲生活。我们的目标是每年帮助500名移民！",
+    "visionTitle": "我们的愿景",
+    "visionBody": "我们的愿景是丰富女性的休闲生活，并鼓励她们过上健康而美丽的生活。我们协助专业女性开创事业，并鼓励她们建立更繁荣的生活和多元化的职业。"
   },
   "Courses": {
-    "title": "课程项目",
-    "subtitle": "支持你身心健康旅程的冥想与健康课程",
+    "title": "课程",
+    "byLabel": "作者",
+    "levelLabel": "难度级别",
     "priceLabel": "价格",
-    "levelLabel": "难度",
     "enrollCta": "报名",
     "paymentComingSoon": "线上支付功能尚未开放，请联系我们完成报名。",
-    "backToCourses": "返回全部课程项目",
-    "notFound": "未找到该课程项目。"
+    "backToCourses": "返回全部课程",
+    "whatYoullLearn": "学习内容",
+    "notFound": "未找到该课程。",
+    "noEnglishNotice": "该课程目前仅在原站发布了中文版本。"
   },
   "Blogs": {
-    "title": "博客",
-    "subtitle": "来自我们社群的故事、技巧与指导",
+    "title": "Latest News",
+    "subtitle": "给女性的洞见与灵感",
     "readMore": "阅读全文",
-    "backToBlogs": "返回全部博客",
+    "backToBlogs": "返回全部文章",
     "byLabel": "作者",
     "notFound": "未找到该文章。"
   },
   "Membership": {
-    "title": "会员",
-    "subtitle": "加入 Soul Good 身心灵俱乐部，成为互相支持社群的一份子",
-    "normalName": "普通会员",
-    "normalPrice": "$20",
-    "normalPeriod": "/ 月",
+    "title": "会员定价",
+    "subtitle": "体验专为全年龄段女性打造的魅力与精彩",
+    "intro": "加入 Soul Good 幸福女性俱乐部，无限制畅享我们的专属工作坊、导师计划以及充满支持的女性社群。无论您是渴望在职场中脱颖而出、开启创业之旅，还是在生活中寻找平衡，在这里，成长的脚步从未停歇。",
+    "normalName": "Normal Member 普通会员",
+    "normalPrice": "$20.00",
+    "normalPeriod": "/ month",
     "normalFeatures": [
-      "参与会员专属社群活动",
-      "部分课程项目享受折扣价",
-      "每月身心健康通讯"
+      "Career Development Workshops 职业发展工作坊：职业规划、求职技巧、职场软技能等",
+      "Entrepreneurship Guidance and Training 创业指导与培训",
+      "Mind-Body and Holistic Wellness Program 身心和整体健康计划",
+      "Happy Families: Building Relationships 幸福家庭——发展关系"
     ],
-    "vipName": "VIP 会员",
-    "vipPrice": "$999",
-    "vipPeriod": "/ 年",
+    "vipName": "VIP Member VIP会员",
+    "vipDescription": "Receive exclusive program offers, opportunities for community engagement, and increased involvement in our leadership with our VIP Package. 订阅我们的VIP套餐，即可享受专属活动优惠、参与社区互动的机会，并进一步融入我们的领导层。",
+    "vipPrice": "$999.00",
+    "vipPeriod": "/ year",
     "vipFeatures": [
-      "包含普通会员全部权益",
-      "所有课程项目优先报名",
-      "部分工作坊免费参加",
-      "每季度一对一身心健康交流"
+      "All Normal Member features 所有普通会员功能",
+      "Enjoy exclusive program discounts 享受专属项目优惠",
+      "Opportunities to get involved in the community 更多社区参与机会",
+      "Participate in leadership roles 参与领导层工作"
     ],
-    "getCta": "立即加入",
+    "getCta": "Get",
     "paymentComingSoon": "线上支付功能尚未开放，请联系我们完成加入。"
   },
   "Partners": {
     "title": "合作伙伴",
-    "subtitle": "支持并与 Soul Good 身心灵俱乐部合作的机构"
+    "contactTitle": "通过微信和小红书 了解更多并联系我们",
+    "connectRednote": "小红书",
+    "connectWechat": "微信"
   }
 }

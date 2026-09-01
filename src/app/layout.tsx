@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Soul Good Wellness Club",
-  description: "Soul Good Wellness Club",
+  title: "Soul Good Happy Women's Club",
+  description: "Soul Good Happy Women's Club",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

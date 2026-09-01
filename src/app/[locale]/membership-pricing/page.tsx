@@ -9,6 +9,7 @@ export default function MembershipPricingPage() {
   const tiers = [
     {
       name: t("normalName"),
+      description: null,
       price: t("normalPrice"),
       period: t("normalPeriod"),
       features: t.raw("normalFeatures") as string[],
@@ -16,6 +17,7 @@ export default function MembershipPricingPage() {
     },
     {
       name: t("vipName"),
+      description: t("vipDescription"),
       price: t("vipPrice"),
       period: t("vipPeriod"),
       features: t.raw("vipFeatures") as string[],
@@ -28,12 +30,16 @@ export default function MembershipPricingPage() {
       <div className="text-center">
         <h1 className="text-3xl font-semibold tracking-tight">{t("title")}</h1>
         <p className="mt-2 text-muted-foreground">{t("subtitle")}</p>
+        <p className="mx-auto mt-4 max-w-2xl text-sm text-muted-foreground">{t("intro")}</p>
       </div>
       <div className="mt-12 grid gap-6 sm:grid-cols-2">
         {tiers.map((tier) => (
           <Card key={tier.name} className={tier.highlighted ? "border-primary shadow-md" : ""}>
             <CardHeader>
               <CardTitle className="text-xl">{tier.name}</CardTitle>
+              {tier.description && (
+                <p className="text-xs text-muted-foreground">{tier.description}</p>
+              )}
               <div className="flex items-baseline gap-1">
                 <span className="text-3xl font-semibold">{tier.price}</span>
                 <span className="text-sm text-muted-foreground">{tier.period}</span>
