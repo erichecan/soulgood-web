@@ -14,7 +14,7 @@ export default async function BlogsPage({ params }: PageProps<"/[locale]/blogs">
 
   return (
     <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-16">
-      <h1 className="text-3xl font-semibold tracking-tight">{t("title")}</h1>
+      <h1 className="text-4xl font-semibold tracking-tight lg:text-8xl">{t("title")}</h1>
       <p className="mt-2 text-muted-foreground">{t("subtitle")}</p>
       <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {list.map((post) => (
@@ -24,7 +24,7 @@ export default async function BlogsPage({ params }: PageProps<"/[locale]/blogs">
                 <Image src={post.image} alt="" width={400} height={220} className="h-36 w-full object-cover" />
               )}
               <CardHeader>
-                <CardTitle className="text-base">{post.title}</CardTitle>
+                <CardTitle className="text-2xl lg:text-3xl">{post.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-xs text-muted-foreground">

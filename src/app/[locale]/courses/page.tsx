@@ -15,7 +15,7 @@ export default async function CoursesPage({ params }: PageProps<"/[locale]/cours
 
   return (
     <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-16">
-      <h1 className="text-3xl font-semibold tracking-tight">{t("title")}</h1>
+      <h1 className="text-4xl font-semibold tracking-tight lg:text-[68px]">{t("title")}</h1>
       <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {list.map((course) => (
           <Link key={course.slug} href={`/courses/${encodeURIComponent(course.slug)}`}>
@@ -25,7 +25,7 @@ export default async function CoursesPage({ params }: PageProps<"/[locale]/cours
               )}
               <CardHeader>
                 <div className="flex items-center justify-between gap-2">
-                  <CardTitle className="text-base">{course.title}</CardTitle>
+                  <CardTitle className="text-2xl lg:text-3xl">{course.title}</CardTitle>
                   {course.level && <Badge variant="secondary">{course.level}</Badge>}
                 </div>
               </CardHeader>

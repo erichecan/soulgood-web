@@ -48,13 +48,13 @@ export default async function CourseDetailPage({
         />
       )}
       <div className="mt-6 flex items-center gap-3">
-        <h1 className="text-3xl font-semibold tracking-tight">{localized.title}</h1>
+        <h1 className="text-4xl font-semibold tracking-tight lg:text-5xl">{localized.title}</h1>
         {localized.level && <Badge variant="secondary">{localized.level}</Badge>}
       </div>
       {localized.description && <p className="mt-4 text-lg text-muted-foreground">{localized.description}</p>}
       {localized.whatYoullLearn && (
         <div className="mt-8">
-          <h2 className="text-xl font-semibold tracking-tight">{t("whatYoullLearn")}</h2>
+          <h2 className="text-xl font-semibold tracking-tight lg:text-2xl">{t("whatYoullLearn")}</h2>
           <p className="mt-2 text-muted-foreground">{localized.whatYoullLearn}</p>
         </div>
       )}

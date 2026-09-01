@@ -45,11 +45,11 @@ export default async function BlogDetailPage({
           className="mt-6 w-full rounded-lg object-cover"
         />
       )}
-      <h1 className="mt-6 text-3xl font-semibold tracking-tight">{localized.title}</h1>
+      <h1 className="mt-6 text-4xl font-semibold tracking-tight lg:text-5xl">{localized.title}</h1>
       <p className="mt-2 text-sm text-muted-foreground">
         {t("byLabel")} {localized.author} &middot; {localized.publishedAt}
       </p>
-      <div className="mt-8 space-y-4 text-muted-foreground">
+      <div className="mt-8 space-y-4 text-lg text-muted-foreground">
         {localized.content.split("\n\n").map((paragraph, i) => (
           <p key={i}>{paragraph}</p>
         ))}

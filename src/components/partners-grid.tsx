@@ -43,7 +43,7 @@ export function PartnersContact() {
 
   return (
     <div className="mt-10 rounded-xl bg-sky-500 px-6 py-10 text-center text-white">
-      <h3 className="text-xl font-semibold">{t("contactTitle")}</h3>
+      <h3 className="text-xl font-semibold lg:text-3xl">{t("contactTitle")}</h3>
       <div className="mt-6 flex flex-col items-center justify-center gap-6 sm:flex-row">
         <a
           href="https://www.xiaohongshu.com/user/profile/61df1c740000000010005686"

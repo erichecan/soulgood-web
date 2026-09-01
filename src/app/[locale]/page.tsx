@@ -43,7 +43,9 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
         />
         <div className="relative z-10 mx-auto flex w-full max-w-6xl justify-end px-4">
           <div className="max-w-sm rounded-lg bg-background/95 p-8 shadow-lg">
-            <h1 className="text-2xl font-semibold tracking-tight">{t("heroTitle")}</h1>
+            <h1 className="text-[28px] font-semibold leading-[1.2] tracking-tight lg:text-[40px]">
+              {t("heroTitle")}
+            </h1>
             <Link
               href="/courses"
               className="mt-4 inline-flex items-center gap-1 rounded-full border px-4 py-2 text-sm font-medium transition-colors hover:bg-muted"
@@ -55,7 +57,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
       </section>
 
       <section className="mx-auto w-full max-w-3xl px-4 py-16 text-center">
-        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">{t("tagline")}</h2>
+        <h2 className="text-4xl font-bold tracking-tight lg:text-[90px] lg:leading-[1.1]">{t("tagline")}</h2>
         <p className="mt-4 text-muted-foreground">
           {t("taglineSubtitleLine1")}
           {t("taglineSubtitleLine2") && (
@@ -76,7 +78,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
 
       <section className="border-t bg-muted/30">
         <div className="mx-auto w-full max-w-6xl px-4 py-16">
-          <h2 className="text-center text-2xl font-semibold tracking-tight">
+          <h2 className="text-center text-3xl font-semibold tracking-tight lg:text-5xl">
             {t("missionSectionTitle")}
           </h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-3">
@@ -84,7 +86,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
               <Card key={card.title} className="overflow-hidden">
                 <Image src={card.image} alt="" width={400} height={300} className="w-full object-cover" />
                 <CardHeader>
-                  <CardTitle className="text-base">{card.title}</CardTitle>
+                  <CardTitle className="text-base lg:text-xl">{card.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground">{card.body}</p>
@@ -96,7 +98,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
       </section>
 
       <section className="mx-auto w-full max-w-3xl px-4 py-16">
-        <h2 className="text-center text-2xl font-semibold tracking-tight">{t("introTitle")}</h2>
+        <h2 className="text-center text-3xl font-semibold tracking-tight lg:text-5xl">{t("introTitle")}</h2>
         <div className="mt-8 aspect-video overflow-hidden rounded-lg border">
           <iframe
             className="h-full w-full"
@@ -110,7 +112,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
 
       <section className="border-t bg-muted/30">
         <div className="mx-auto w-full max-w-6xl px-4 py-16">
-          <h2 className="text-center text-2xl font-semibold tracking-tight">
+          <h2 className="text-center text-4xl font-semibold tracking-tight lg:text-8xl">
             {t("coursesSectionTitle")}
           </h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -126,7 +128,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
                   />
                   <CardHeader>
                     <div className="flex items-center justify-between gap-2">
-                      <CardTitle className="text-base">{course.title}</CardTitle>
+                      <CardTitle className="text-lg">{course.title}</CardTitle>
                       <Badge variant="secondary">{course.level}</Badge>
                     </div>
                   </CardHeader>
@@ -153,7 +155,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
       </section>
 
       <section className="mx-auto w-full max-w-6xl px-4 py-16">
-        <h2 className="text-center text-2xl font-semibold tracking-tight">{t("blogsSectionTitle")}</h2>
+        <h2 className="text-center text-4xl font-semibold tracking-tight lg:text-8xl">{t("blogsSectionTitle")}</h2>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {localizedPosts.slice(0, 3).map((post) => (
             <Link key={post.slug} href={`/blogs/${encodeURIComponent(post.slug)}`}>
@@ -162,7 +164,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
                   <Image src={post.image} alt="" width={400} height={220} className="h-36 w-full object-cover" />
                 )}
                 <CardHeader>
-                  <CardTitle className="text-base">{post.title}</CardTitle>
+                  <CardTitle className="text-xl lg:text-2xl">{post.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-xs text-muted-foreground">
@@ -182,7 +184,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
 
       <section className="border-t bg-muted/30">
         <div className="mx-auto w-full max-w-6xl px-4 py-16">
-          <h2 className="text-center text-2xl font-semibold tracking-tight">
+          <h2 className="text-center text-4xl font-semibold tracking-tight lg:text-[64px]">
             {t("partnersSectionTitle")}
           </h2>
           <div className="mt-10">
