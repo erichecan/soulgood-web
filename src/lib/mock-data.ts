@@ -109,7 +109,7 @@ export const blogPosts: MockBlogPost[] = [
 ];
 
 export const partners: MockPartner[] = [
-  { name: "Pioneer Group", linkUrl: null },
+  { name: "Pioneer Group", linkUrl: "https://pioneergroups.ca/" },
   { name: "Soul Beauty Healing Center", linkUrl: "https://www.soulbeautyhealing.ca/" },
   { name: "Pioneer HR Solutions", linkUrl: null },
   { name: "University of Waterloo", linkUrl: "https://uwaterloo.ca/" },
