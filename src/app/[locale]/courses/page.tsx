@@ -1,10 +1,9 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { listPublishedCourses } from "@/lib/db/courses";
 import { localizeCourse } from "@/lib/localize-content";
+import { formatMoney } from "@/lib/money";
 import type { Locale } from "@/i18n/routing";
 
 export const dynamic = "force-dynamic";
@@ -13,38 +12,19 @@ export default async function CoursesPage({ params }: PageProps<"/[locale]/cours
   const { locale } = await params;
   const t = await getTranslations("Courses");
   const courses = await listPublishedCourses();
-  const list = courses.map((c) => localizeCourse(c, locale as Locale)).filter((c) => c !== null);
+  const list = courses.map((course) => localizeCourse(course, locale as Locale)).filter((course) => course !== null);
+  const title = locale === "zh-hans" ? "为自己留一点学习时间。" : "Make room to learn something good.";
+  const intro = locale === "zh-hans" ? "在 Soul Good 的课程中学习、练习，也与彼此建立连接。" : "Learn, practise and connect with others through Soul Good courses.";
 
   return (
-    <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-16">
-      <h1 className="text-4xl font-semibold tracking-tight lg:text-[68px]">{t("title")}</h1>
-      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {list.map((course) => (
-          <Link key={course.slug} href={`/courses/${encodeURIComponent(course.slug)}`}>
-            <Card className="h-full overflow-hidden transition-shadow hover:shadow-md">
-              {course.image && (
-                <Image src={course.image} alt="" width={400} height={260} className="h-40 w-full object-cover" />
-              )}
-              <CardHeader>
-                <div className="flex items-center justify-between gap-2">
-                  <CardTitle className="text-2xl lg:text-3xl">{course.title}</CardTitle>
-                  {course.level && <Badge variant="secondary">{course.level}</Badge>}
-                </div>
-              </CardHeader>
-              <CardContent>
-                <div className="flex items-baseline gap-2">
-                  {course.compareAtPrice && (
-                    <span className="text-sm text-muted-foreground line-through">
-                      ${course.compareAtPrice.toFixed(2)}
-                    </span>
-                  )}
-                  <span className="font-medium">${course.price.toFixed(2)}</span>
-                </div>
-              </CardContent>
-            </Card>
-          </Link>
-        ))}
-      </div>
+    <main className="editorial-main">
+      <section className="editorial-legal-hero"><p className="editorial-eyebrow">SOUL GOOD · LEARNING TOGETHER</p><h1 className="editorial-title">{title}</h1><p>{intro}</p></section>
+      <section className="editorial-content">
+        {list.length ? <div className="editorial-course-grid">{list.map((course) => <Link className="editorial-course" href={`/courses/${encodeURIComponent(course.slug)}`} key={course.slug}>
+          {course.image && <Image src={course.image} alt={course.title} width={700} height={480} />}
+          <div className="course-copy"><p className="editorial-eyebrow">{course.level || "SOUL GOOD COURSE"}</p><h2>{course.title}</h2><p>{course.description}</p><strong>{formatMoney(course.price, "CAD", locale as Locale)}</strong></div><span className="course-link">{locale === "zh-hans" ? "查看课程" : "View course"} ↗</span>
+        </Link>)}</div> : <p className="editorial-callout">{locale === "zh-hans" ? "新课程正在准备中，欢迎稍后再来。" : "New courses are being prepared. Please check back soon."}</p>}
+      </section>
     </main>
   );
 }

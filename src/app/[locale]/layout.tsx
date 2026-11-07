@@ -25,7 +25,7 @@ export default async function LocaleLayout({
       <div lang={locale} className="flex flex-1 flex-col">
         <SiteHeader locale={locale} />
         <div className="flex flex-1 flex-col">{children}</div>
-        <SiteFooter />
+        <SiteFooter locale={locale as "en" | "zh-hans"} />
       </div>
     </NextIntlClientProvider>
   );

@@ -1,53 +1,41 @@
 import Image from "next/image";
-import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import type { Locale } from "@/i18n/routing";
 
-export function SiteFooter() {
-  const t = useTranslations("Footer");
-  const nav = useTranslations("Nav");
+const footerCopy = {
+  en: {
+    lead: <>Good things happen<br />when we <em>come together.</em></>,
+    groups: [
+      { title: "EXPLORE", links: [["Events & Workshops", "/events"], ["Membership", "/membership-pricing"], ["The Space", "/the-space"], ["Courses", "/courses"]] },
+      { title: "DISCOVER", links: [["About Us", "/about-us"], ["Contact", "/contact"], ["FAQ", "/faq"]] },
+      { title: "POLICIES", links: [["Privacy", "/privacy"], ["Membership Terms", "/membership-terms"], ["Refunds", "/refunds"], ["Event Guidelines", "/event-guidelines"]] },
+    ],
+    location: "SOUL GOOD / HAPPY WOMEN'S CLUB · NORTH YORK, TORONTO",
+    note: "Visual concept · event and membership details subject to confirmation",
+  },
+  "zh-hans": {
+    lead: <>相聚在一起，<br />美好自然<em>发生。</em></>,
+    groups: [
+      { title: "探索", links: [["活动与工作坊", "/events"], ["会员", "/membership-pricing"], ["场地空间", "/the-space"], ["课程", "/courses"]] },
+      { title: "认识我们", links: [["关于我们", "/about-us"], ["联系", "/contact"], ["常见问题", "/faq"]] },
+      { title: "相关政策", links: [["隐私政策", "/privacy"], ["会员条款", "/membership-terms"], ["退款政策", "/refunds"], ["活动须知", "/event-guidelines"]] },
+    ],
+    location: "SOUL GOOD / 快乐女性俱乐部 · 多伦多北约克",
+    note: "视觉概念 · 活动与会员详情以最终确认为准",
+  },
+} as const;
 
-  const links = [
-    { href: "/", label: nav("home") },
-    { href: "/courses", label: nav("courses") },
-    { href: "/blogs", label: nav("blogs") },
-    { href: "/membership-pricing", label: nav("membership") },
-    { href: "/about-us", label: nav("aboutUs") },
-    { href: "/our-partners", label: nav("ourPartners") },
-  ] as const;
-
+export function SiteFooter({ locale = "en" }: { locale?: Locale }) {
+  const content = footerCopy[locale === "zh-hans" ? "zh-hans" : "en"];
   return (
-    <footer className="border-t bg-muted/30">
-      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:grid-cols-3">
-        <div>
-          <Image
-            src="/migrated/brand/footer-logo.svg"
-            alt="Soul Good Happy Women's Club"
-            width={120}
-            height={79}
-            className="h-10 w-auto"
-          />
-        </div>
-        <div>
-          <p className="text-sm font-medium">{nav("club")}</p>
-          <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-            {links.map((link) => (
-              <li key={link.href}>
-                <Link href={link.href} className="transition-colors hover:text-foreground">
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="space-y-2 text-sm text-muted-foreground">
-          <p>{t("phone")}</p>
-          <p>{t("email")}</p>
-          <p>{t("address")}</p>
+    <footer className="editorial-footer">
+      <div className="editorial-footer-main">
+        <Link href="/" className="editorial-footer-brand"><Image src="/migrated/brand/footer-logo.svg" alt="Soul Good" width={120} height={79} />{content.lead}</Link>
+        <div className="editorial-footer-groups">
+          {content.groups.map((group) => <div key={group.title}><h2>{group.title}</h2><ul>{group.links.map(([label, href]) => <li key={href}><Link href={href}>{label}</Link></li>)}</ul></div>)}
         </div>
       </div>
-      <div className="border-t px-4 py-4 text-center text-xs text-muted-foreground">
-        &copy; {new Date().getFullYear()} {t("rights")}
-      </div>
+      <div className="editorial-footer-bottom"><span>{content.location}</span><span>{content.note}</span></div>
     </footer>
   );
 }
