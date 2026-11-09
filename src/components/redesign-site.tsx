@@ -41,7 +41,7 @@ const copy = {
     spaceIntro: "From small workshops to creative sessions and intimate conversations, the space can flex around your plans.",
     newsletter: "A little more good,\nin your inbox.", newsletterBody: "Occasional updates about events and the community. Only if you ask for them.",
     email: "Your email address", subscribe: "Get updates",
-    eventsEyebrow: "02 / Soul Good", eventsTitle: "Worth gathering\nfor.", eventsIntro: "Explore the programme, discover a session that speaks to you and register when the details are confirmed.",
+    eventsEyebrow: "02 / Soul Good", eventsTitle: "Worth gathering for.", eventsIntro: "Explore the programme, discover a session that speaks to you and register when the details are confirmed.",
     filters: ["All experiences", "Workshops", "Community", "Free sessions"], featured: "Featured · Programme preview",
     featuredTitle: "An invitation to\nsomething new.", featuredBody: "Event title, date, facilitator and ticket availability will appear after the programme is approved.",
     viewFormat: "View event format", programme: "The programme", programmeBody: "Filters and availability states are shown here as a design example. No event dates or prices are being asserted.",
