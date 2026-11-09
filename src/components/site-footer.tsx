@@ -14,7 +14,7 @@ const footerCopy = {
     note: "Visual concept · event and membership details subject to confirmation",
   },
   "zh-hans": {
-    lead: <>相聚在一起，<br />美好自然<em>发生。</em></>,
+    lead: <>相聚在一起，<br /><span className="footer-lead-nowrap">美好自然<em>发生。</em></span></>,
     groups: [
       { title: "探索", links: [["活动与工作坊", "/events"], ["会员", "/membership-pricing"], ["场地空间", "/the-space"], ["课程", "/courses"]] },
       { title: "认识我们", links: [["关于我们", "/about-us"], ["联系", "/contact"], ["常见问题", "/faq"]] },

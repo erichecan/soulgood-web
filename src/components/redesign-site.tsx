@@ -118,7 +118,7 @@ function Eyebrow({ children }: { children: ReactNode }) {
 
 function Title({ children, className = "" }: { children: string; className?: string }) {
   const parts = children.split("\n");
-  return <h1 className={`editorial-title ${className}`}>{parts.map((part, i) => <span key={`${part}-${i}`}>{part}{i < parts.length - 1 && <br />}</span>)}</h1>;
+  return <h1 className={`editorial-title ${className}`}>{parts.map((part, i) => <span key={`${part}-${i}`}>{part.split(/(空间)/g).map((segment, j) => <span key={j} className={segment === "空间" ? "editorial-no-break" : undefined}>{segment}</span>)}{i < parts.length - 1 && <br />}</span>)}</h1>;
 }
 
 function Action({ href, children, dark = true }: { href: string; children: ReactNode; dark?: boolean }) {
